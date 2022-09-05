@@ -189,11 +189,11 @@ body form {
     background-color: var(--bg-surface);
 }
 
-.text-h2 {
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-h2);
-    letter-spacing: var(--ls-h2);
-    line-height: var(--lh-h2);
+.text-s1 {
+    font-weight: var(--fw-semi-bold);
+    font-size: var(--fs-s1);
+    letter-spacing: var(--ls-s1);
+    line-height: var(--lh-s1);
 }
 
 .text-b2 {
@@ -247,7 +247,7 @@ input[type="submit"] {
   </head>
   <body>
     <form method="POST">
-      <h2 class="text-h2">Confirm Captcha</h2>
+      <h2 class="heading text-s1">Confirm Captcha</h2>
       <div class="g-recaptcha" data-sitekey="{{ recaptchaSiteKey }}"></div>
       <p class="text-b2 continue-alert">Continuing will create a guest user that is stored as a cookie for the duration of your browser session.</p>
       <br/>
