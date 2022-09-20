@@ -5,7 +5,9 @@ const koaTwig = require('koa-twig');
 const config = require('./config')
 const providerGenerator = require('./provider')
 
-const provider = providerGenerator()
+const displayNames = {}
+
+const provider = providerGenerator(displayNames)
 
 const render = koaTwig({
   views: `${__dirname}/views`,
@@ -42,6 +44,8 @@ router.post('/interaction/:grant', async (ctx) => {
     }
 
     const id = config.generateId()
+    displayNames[id] = ctx.request.body["display_name"]
+
     await provider.interactionFinished(
       ctx.req,
       ctx.res,
