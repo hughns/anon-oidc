@@ -15,7 +15,7 @@ module.exports = (names) => {
       }
     },
     claims: {
-      openid: ['sub'],
+      openid: ['sub', 'name'],
     },
     features: {
       devInteractions: {
