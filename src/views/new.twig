@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Guest Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
 :root {
@@ -201,6 +202,12 @@ body form {
     letter-spacing: var(--ls-b2);
     line-height: var(--lh-b2);
 }
+.text-b3 {
+    font-size: var(--fs-b3);
+    letter-spacing: var(--ls-b3);
+    line-height: var(--lh-b3);
+    color: var(--tc-surface-low);
+}
 
 .heading {
     margin: 0 0 var(--sp-lg)
@@ -209,10 +216,15 @@ body form {
     margin: var(--sp-md) 0 0;
 }
 
+.displayName {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+}
+
 input {
     height: 40px;
     padding: 0 var(--sp-xs);
-    margin-top: var(--sp-xs);
     border-radius: var(--br-sm);
     background-color: var(--bg-surface-low);
     border: none;
@@ -248,18 +260,15 @@ input[type="submit"] {
   <body>
     <form method="POST">
       <h2 class="heading text-s1">Guest registration</h2>
-      <p class="text-b2 continue-alert">Continuing will create a guest user that is stored as a cookie for the duration of your browser session.</p>
       <br>
-      <div>
+      <div class="displayName">
         <label>What name would you like to use?</label>
-      </div>
-      <div>
         <input type="text" name="name" placeholder="Name..." />
-        <br>
-        <small>You can change this later on</small>
+        <p class="text-b3">You can change this later on</p>
       </div>
       <br>
       <div class="g-recaptcha" data-sitekey="{{ recaptchaSiteKey }}"></div>
+      <p class="text-b2 continue-alert">Continuing will create a guest user that is stored as a cookie for the duration of your browser session.</p>
       <br>
       <input type="submit" name="approved" value="Continue" class="btn-primary">
       <input type="submit" name="cancelled" value="Cancel" class="btn-default">
